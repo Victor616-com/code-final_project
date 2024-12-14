@@ -326,6 +326,10 @@ body {
     -webkit-animation: scale-up-tr 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	animation: scale-up-tr 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+#cards #filters-wrapper.close{
+    display: none;
+}
+
 #cards #filters-wrapper h3 {
     font-size: 22px;
     font-weight: 700;
@@ -437,7 +441,12 @@ body {
 
 
 @media only screen and (max-width: 400px) {
-
+    .no-scroll {
+        overflow: hidden;
+    }
+    .hide {
+        display: none;
+    }
     .navbar {
         position: fixed;
         width: 100vw;

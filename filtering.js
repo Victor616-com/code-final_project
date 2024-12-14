@@ -111,7 +111,7 @@ function submitForm() {
     // Add the filtered spots to HTML and initialize the map
     addDataToHTML(filteredSpots);
     initMap(filteredSpots);
-    toggleFilters();
+    closeFilters();
 }
 
 

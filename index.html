@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+   
     <title>Picnic Spots</title>
 
 </head>
@@ -27,7 +27,7 @@
     <header></header>
     
     <div id="main-header">
-        <div id="image-wrapper">
+        <div id="image-wrapper" >
             <div id="image">
                 <div id="header-text">
                     <h1>Hidden Gems of Aarhus Discover, Picnic, Preserve</h1>
@@ -42,12 +42,12 @@
     </div>
     
     <div id="cards">
-        <button class="black-btn" id="filter-icon" onclick="toggleFilters()">
+        <button class="black-btn" id="filter-icon" onclick="openFilters()">
             Filters
             <img src="resources/images/filter-icon.svg" alt="filters"> 
         </button>
         <div id="filters-wrapper">
-            <button id="exit-filters-btn" onclick="toggleFilters()">
+            <button id="exit-filters-btn" onclick="closeFilters()">
                 <img id="exit-filters" src="resources/images/x-white.svg" alt="x">
             </button>
             
@@ -144,6 +144,7 @@
     <div id="weather"></div>
 
 </body>
+
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlfT7qosbn2ZLpsrBmwhI7HwXQj23GKNI&callback=initMap"></script>
 <script src="filtering.js"></script>
 <script src="javascript.js"></script>

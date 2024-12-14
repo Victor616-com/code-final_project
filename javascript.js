@@ -67,23 +67,28 @@ const addDataToHTML = (filteredSpots) => {
 }
 
 
-// Function that removes the show class on reload
-window.onload = function () {
-    const filters = document.getElementById('filters-wrapper');
-    filters.classList.remove('show');
-};
 
 // FUnction for closing the filter menu and clearing the form when Clear Filters button is pressed 
 function clearFilters() {
-    clearForm(); // Function in filtering.js
+    
     const filters = document.getElementById('filters-wrapper');
-    filters.classList.remove('show'); // Toggle the 'show' class
+    filters.classList.remove('show');
+    clearForm(); // Function in filtering.js
 }
 
+
 // Function for openning and cloing the filter menu
-function toggleFilters() {
+function openFilters() {
     const filters = document.getElementById('filters-wrapper');
-    filters.classList.toggle('show'); // Toggle the 'show' class
+    filters.classList.add('show'); // Toggle the 'show' class
+    document.body.classList.add('no-scroll');
+    navBar.classList.add('hide');
+}
+function closeFilters() {
+    const filters = document.getElementById('filters-wrapper');
+    filters.classList.remove('show');
+    document.body.classList.remove('no-scroll');
+    navBar.classList.remove('hide');
 }
 
 
