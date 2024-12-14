@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Picnic Spots</title>
+
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <header></header>
+    
+    <section id="main-header">
+        <div id="image-wrapper">
+            <div id="image">
+                <div id="header-text">
+                    <h1>Hidden Gems of Aarhus Discover, Picnic, Preserve</h1>
+                </div>
+            </div>
+            <div id="what-to-bring-wrapper">
+                <img src="resources/images/basket.svg" alt="basket">
+                <button class="black-btn" id="what-to-bring-btn">What to bring</button>  
+            </div>
+        </div>
+        
+    </section>
+    
+    <section id="cards">
+        <div id="filters-wrapper">
+            <form id="filterForm">
+                <h3>Popularity</h3>
+                <p>
+                    <input type="checkbox" id="low" name="pupularity">
+                    <label for="low">low</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="medium" name="pupularity">
+                    <label for="medium">medium</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="high" name="pupularity">
+                    <label for="high">high</label>
+                </p>
+
+                <h3>Accessibility</h3>
+                <p>
+                    <input type="checkbox" id="wheelchair-friendly" name="accessibility">
+                    <label for="wheelchair-friendly">wheelchair friendly</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="by-car" name="accessibility">
+                    <label for="by-car">by car</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="by-bike" name="accessibility">
+                    <label for="by-bike">by bike</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="on-foot" name="accessibility">
+                    <label for="on-foot">on foot</label>
+                </p>
+
+                <h3>Activities</h3>
+                <p>
+                    <input type="checkbox" id="hiking" name="activities">
+                    <label for="hiking">hiking</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="biking" name="activities">
+                    <label for="biking">biking</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="boat-watching" name="activities">
+                    <label for="boat-watching">boat watching</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="fishing" name="activities">
+                    <label for="fishing">fishing</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="football" name="activities">
+                    <label for="football">football</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="volleyball" name="activities">
+                    <label for="volleyball">volleyball</label>
+                </p>
+
+                <h3>Amenities</h3>
+                <p>
+                    <input type="checkbox" id="tables" name="amenities">
+                    <label for="tables">tables</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="toilets" name="amenities">
+                    <label for="toilets">toilets</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="fire-pit" name="amenities">
+                    <label for="fire-pit">fire pit</label>
+                </p>
+                
+            </form>
+            <button class="black-btn" id="filter-apply" onclick="submitForm()">Apply</button> 
+        </div>
+        
+        <div id="cards-wrapper">
+        </div>
+      
+
+    </section>
+    
+    <section id="map-wrapper">
+        <div id="map"></div>
+    </section>
+    
+    <section id="weather"></section>
+
+</body>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlfT7qosbn2ZLpsrBmwhI7HwXQj23GKNI&callback=initMap"></script>
+<script src="filtering.js"></script>
+<script src="javascript.js"></script>
+<script src="map-JS.js"></script>
+</html>
