@@ -45,7 +45,7 @@
     },
     {
         "id": 3,
-        "image": "Det-lille-fyrtårn1.PNG",
+        "image": "Det-lille-fyrtarn1.PNG",
         "title": "Det lille fyrtårn",
         "description": "A nice spot to relax by the sea and watch boats going by",
         "popularity": "medium",
@@ -109,7 +109,7 @@
     },
     {
         "id": 6,
-        "image": "Plads.PNG",
+        "image": "Plads.png",
         "title": "Plads",
         "description": "A peaceful park in Aarhus, offering open green spaces perfect for relaxation or casual strolls",
         "popularity": "low",
@@ -130,7 +130,7 @@
     },
     {
         "id": 7,
-        "image": "Strandengen.PNG",
+        "image": "Strandengen.png",
         "title": "Strandengen",
         "description": "Strandengen in Aarhus is a scenic coastal meadow, perfect for enjoying nature and the sea.",
         "popularity": "high",
@@ -151,7 +151,7 @@
     },
     {
         "id": 8,
-        "image": "Ballehage-Beach.PNG",
+        "image": "Ballehage-Beach.png",
         "title": "Ballehage Beach",
         "description": " Ballehage Beach in Aarhus is a charming seaside spot nestled by the Marselisborg Forests",
         "popularity": "high",
@@ -172,7 +172,7 @@
     },
     {
         "id": 9,
-        "image": "Vårkjærparken.PNG",
+        "image": "Vårkjærparken.png",
         "title": "Vårkjærparken",
         "description": "A nice spot to relax",
         "popularity": "low",
