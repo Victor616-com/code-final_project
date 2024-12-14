@@ -10,7 +10,7 @@ function submitForm() {
             wheelchair: false,
             car: false,
             bikes: false,
-            onFoot: false // Ensure onFoot is included here
+            onFoot: false
         },
         activities: {
             fishing: false,
@@ -55,16 +55,6 @@ function submitForm() {
     // Convert the form data object into a JSON string for debugging
     console.log(JSON.stringify(formData, null, 2));
 
-/*
-        const isAnyFilterSelected = Object.values(formData.popularity).includes(true) ||
-            Object.values(formData.accessibility).includes(true) ||
-            Object.values(formData.activities).includes(true) ||
-            Object.values(formData.amenities).includes(true);
-        
-        if (!isAnyFilterSelected) {
-            return listSpots; // If no filter is selected, return all spots
-        }
-        */
     // Function to filter locations based on form data
     function filterLocations(locations, formData) {
         return locations.filter(location => {
@@ -114,21 +104,28 @@ function submitForm() {
             // If all filters pass, include the location
             return true;
         });
-    }
-    
-    function clearResults() {
-    // Clear the list of spots
-    const spotsContainer = document.getElementById('spotsContainer');
-    spotsContainer.innerHTML = "<p>No results found. Please adjust your filters.</p>";
+    };
 
-    // Optionally, clear the map
-    clearMap();
-}
-
+    // This is the object thet will pass to the list of cards and the map
     let filteredSpots = filterLocations(listSpots, formData);
     console.log(filteredSpots);
 
     // Add the filtered spots to HTML and initialize the map
     addDataToHTML(filteredSpots);
     initMap(filteredSpots);
+}
+
+
+// Function for reseting the filters
+function clearForm() {
+    // Get the form element
+    const form = document.getElementById('filterForm');
+
+    // Reset all input elements in the form
+    const inputs = form.querySelectorAll('input[type="checkbox"]');
+    inputs.forEach(input => {
+        input.checked = false; // Uncheck all checkboxes
+    });
+
+    submitForm(); //Submit the form again with all boxes unchecked
 }

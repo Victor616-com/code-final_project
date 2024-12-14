@@ -4,7 +4,7 @@ const mapWrapper = document.getElementById('map-wrapper');
 // --- Function for the map --- 
 const initMap = (filteredSpots) =>  {
     let markers = filteredSpots;
-    // -- positioning the map on load based on the screen size 
+    // Positioning the map on load based on the screen size 
     let zoom = 0;
     let positioOnStart = [];
     let zoomControls = false;
@@ -17,7 +17,7 @@ const initMap = (filteredSpots) =>  {
     } else {
         zoom = 12.7;
         positioOnStart = [56.149334, 10.203145];
-        zoomControls = true;
+        zoomControls = true; // Allows zoom controls only on desktop version
     }
     
     const centerMap = { lat: positioOnStart[0], lng: positioOnStart[1] }
@@ -25,7 +25,7 @@ const initMap = (filteredSpots) =>  {
         center: centerMap,
         zoom: zoom,
         disableDefaultUI: true, // Disable the google maps controls 
-        zoomControl: zoomControls,
+        zoomControl: zoomControls, // Manages the zoom controls
 
         // Styling for the map from SnazzyMaps
         styles: [
@@ -284,10 +284,11 @@ const initMap = (filteredSpots) =>  {
         ]
     }
 
+    // Creates a new map object from Google API
     const map = new google.maps.Map(document.getElementById('map'), mapOptions);
     
 
-    // --- Displaying the markers and the pop-up boxes ---
+    // Displaying the markers and the pop-up boxes
     markers.forEach((markerData) => {
 
         // Displaying the markers on the map
@@ -298,7 +299,7 @@ const initMap = (filteredSpots) =>  {
                 url: 'resources/images/marker.svg',
                 scaledSize: new google.maps.Size(30, 30),
                 origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(15, 30)
+                anchor: new google.maps.Point(15, 30) // Positions the tip of the marker on the lng and lat
             }
         });
 
@@ -316,7 +317,7 @@ const initMap = (filteredSpots) =>  {
                 </div
             </div>
             <div class="btn-wrapper">
-                <button class="black-btn" onclick="openEventsLink()">See more</button>
+                <button class="black-btn" onclick="openEventsLink()">See more</button> 
             </div>
             
         `;
@@ -357,7 +358,7 @@ const initMap = (filteredSpots) =>  {
         // Update overlay position when the map is idle (after zoom or drag)
         google.maps.event.addListener(map, 'idle', () => overlay.draw());
 
-        /*
+        /* --- Disabled for now ---
         // Modifying the interaction based on the screen size
         if (window.innerWidth > 400) {
             const overlay = new google.maps.OverlayView();

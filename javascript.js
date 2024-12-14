@@ -1,15 +1,15 @@
 let listSpots = [];
 let cardWrapper = document.getElementById("cards-wrapper");
 
-
-
-
-
+// The function that creates each card
 const addDataToHTML = (filteredSpots) => {
-    cardWrapper.replaceChildren();
+    
+    cardWrapper.replaceChildren(); // Delete the previous cards from the las filtering
+
     if(filteredSpots.length > 0) {
-        
         filteredSpots.forEach(card => {
+
+            // Creating the html for the card
             let newCard = document.createElement('div');
             newCard.classList.add('card');
             newCard.dataset.id = card.id;
@@ -31,7 +31,7 @@ const addDataToHTML = (filteredSpots) => {
                 <button class="green-btn card-see_more">See more</button>
             `;
             
-            cardWrapper.appendChild(newCard)
+            cardWrapper.appendChild(newCard) // Ads the card to the wrapper
 
             // Define icons and their corresponding JSON properties
             const iconMapping = [
@@ -49,7 +49,8 @@ const addDataToHTML = (filteredSpots) => {
                 if (!property) icon.style.display = 'none';
             });
         })
-            
+      
+      // Creates the text for No Results  
     } else {
         let noResult = document.createElement('h3');
         noResult.innerHTML = "No results for these filters";
@@ -59,12 +60,13 @@ const addDataToHTML = (filteredSpots) => {
     }
 }
 
+// Fetching the JSON file
 const initApp = () => {
     fetch('card-info.json')
     .then(response => response.json())
     .then(data => {
         listSpots = data;
-        submitForm();
+        submitForm(); // Seds the list to filtering.js 
     })
 }
 initApp()
