@@ -47,13 +47,11 @@ function submitForm() {
     formData.activities.football = form.querySelector('#football').checked;
     formData.activities.hiking = form.querySelector('#hiking').checked;
     formData.activities.volleyball = form.querySelector('#volleyball').checked;
+    formData.activities.bikes = form.querySelector('#biking').checked;
 
     // Collect selected values for amenities
     formData.amenities.toilets = form.querySelector('#toilets').checked;
     formData.amenities.firePit = form.querySelector('#fire-pit').checked;
-
-    // Convert the form data object into a JSON string for debugging
-    console.log(JSON.stringify(formData, null, 2));
 
     // Function to filter locations based on form data
     function filterLocations(locations, formData) {
@@ -85,7 +83,8 @@ function submitForm() {
                     !(formData.activities.boats && location.boats) &&
                     !(formData.activities.football && location.football) &&
                     !(formData.activities.hiking && location.hiking) &&
-                    !(formData.activities.volleyball && location.volleyball)
+                    !(formData.activities.volleyball && location.volleyball) &&
+                    !(formData.activities.bikes && location.bikes)
                 ) {
                     return false;
                 }
@@ -108,16 +107,17 @@ function submitForm() {
 
     // This is the object thet will pass to the list of cards and the map
     let filteredSpots = filterLocations(listSpots, formData);
-    console.log(filteredSpots);
 
     // Add the filtered spots to HTML and initialize the map
     addDataToHTML(filteredSpots);
     initMap(filteredSpots);
+    toggleFilters();
 }
 
 
 // Function for reseting the filters
 function clearForm() {
+    
     // Get the form element
     const form = document.getElementById('filterForm');
 
@@ -126,6 +126,6 @@ function clearForm() {
     inputs.forEach(input => {
         input.checked = false; // Uncheck all checkboxes
     });
-
+    
     submitForm(); //Submit the form again with all boxes unchecked
 }

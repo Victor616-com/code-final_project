@@ -28,11 +28,17 @@ const addDataToHTML = (filteredSpots) => {
                     <img src="resources/images/Football-icon.svg" alt="football" class="football-icon">
                     <img src="resources/images/Bike-icon.svg" alt="bike" class="bike-icon">
                 </div>
-                <button class="green-btn card-see_more">See more</button>
+                <button class="green-btn card-see_more" onclick="openLink()">See more</button>
             `;
             
             cardWrapper.appendChild(newCard) // Ads the card to the wrapper
+            // Get the button after adding the card
+            let seeMoreButton = newCard.querySelector('.card-see_more');
 
+            // Add an event listener to the button
+            seeMoreButton.addEventListener('click', function() {
+                window.location.href = card.link;
+            });
             // Define icons and their corresponding JSON properties
             const iconMapping = [
                 { iconClass: '.fishing-icon', property: card.fishing },
@@ -60,14 +66,69 @@ const addDataToHTML = (filteredSpots) => {
     }
 }
 
+
+// Function that removes the show class on reload
+window.onload = function () {
+    const filters = document.getElementById('filters-wrapper');
+    filters.classList.remove('show');
+};
+
+// FUnction for closing the filter menu and clearing the form when Clear Filters button is pressed 
+function clearFilters() {
+    clearForm(); // Function in filtering.js
+    const filters = document.getElementById('filters-wrapper');
+    filters.classList.remove('show'); // Toggle the 'show' class
+}
+
+// Function for openning and cloing the filter menu
+function toggleFilters() {
+    const filters = document.getElementById('filters-wrapper');
+    filters.classList.toggle('show'); // Toggle the 'show' class
+}
+
+
+
+
+
+
 // Fetching the JSON file
 const initApp = () => {
     fetch('card-info.json')
     .then(response => response.json())
     .then(data => {
         listSpots = data;
-        submitForm(); // Seds the list to filtering.js 
+        submitForm(); // Sends the list to filtering.js 
     })
 }
 initApp()
 
+
+const navBar = document.querySelector('.navbar');
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Check if we are scrolling down
+    if (currentScroll > lastScrollTop) {
+        navBar.classList.add("scroll"); // Add class when scrolling down
+    } else {
+        navBar.classList.remove("scroll"); // Remove class when scrolling up
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
+});
+
+navBar.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        
+        const targetPosition =  targetElement.offsetTop - 80;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+        
+    });
+});

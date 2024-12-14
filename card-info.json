@@ -11,7 +11,7 @@
         "tables": false,
         "boats": false,
         "football": false,
-        "bikes": false,
+        "bikes": true,
         "lat": 56.1403203,
         "lng": 10.1419322,
         "wheelchair": false,
@@ -19,7 +19,8 @@
         "volleyball": false,
         "toilets": false,
         "firePit": false,
-        "car": false
+        "car": false,
+        "link": "andebroen.html"
         
     },
     {

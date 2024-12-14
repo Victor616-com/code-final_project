@@ -22,6 +22,8 @@ body {
     background: var(--bg);
 }
 
+
+/* -- Buttons -- */
 .black-btn {
     display: flex;
     padding: 10px;
@@ -50,9 +52,90 @@ body {
     border-radius: 10px;
     border: 0;
     background: var(--green);
+    /* box-shadow: var(--shadow); */
+    color: var(--black);
+    text-align: center;
+    font-family: var(--font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+.white-btn {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 0;
+    background: var(--white);
     box-shadow: var(--shadow);
     color: var(--black);
     text-align: center;
+    font-family: var(--font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+.red-btn {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 0;
+    background: var(--red);
+    box-shadow: var(--shadow);
+    color: var(--white);
+    text-align: center;
+    font-family: var(--font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+/* -- Nav bar -- */
+
+.navbar {
+    position: fixed;
+    right: 30px;
+    top: 10px;
+    display: inline-flex;
+    padding: 8px 15px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: var(--black);
+    box-shadow: var(--shadow);
+    z-index: 100;
+    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.navbar.scroll {
+    -webkit-animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    list-style-type: none;   
+    padding: 0;              
+    margin: 0;               
+}
+.navbar li {
+    margin: 0;
+    color: var(--white);
     font-family: var(--font);
     font-size: 16px;
     font-style: normal;
@@ -64,6 +147,8 @@ body {
 
 
 
+
+/* -- Main Header -- */
 #main-header {
     position: relative;
     margin-top: 60px;
@@ -88,6 +173,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #CD6364;
+    box-shadow: var(--shadow);
 }
 
 #main-header #image-wrapper #image #header-text h1 {
@@ -116,13 +202,14 @@ body {
     bottom: -10%;
 }
 
-
+/* -- Cards -- */
 #cards {
     margin-top: 100px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 #cards .no-results {
     text-align: center;
@@ -131,7 +218,6 @@ body {
     font-style: normal;
     font-weight: 700;
 }
-
 #cards-wrapper {
     max-width: calc(100% - 40px);
     display: flex;
@@ -142,6 +228,8 @@ body {
     row-gap: 50px;
     column-gap: 80px;
 }
+
+/* -- Style for each Card -- */
 #cards .card {
     display: flex;
     height: 500px;
@@ -198,7 +286,111 @@ body {
     gap: 6px;
 }
 
+/* -- Filter Section -- */
 
+/* -- Filter Icon -- */
+#cards #filter-icon {
+    position: absolute;
+    right: 60px;
+    top: -60px;
+
+}
+
+/* -- Filter Menu -- */
+#cards #filters-wrapper {
+    display: flex;
+    position: absolute;
+    top: -60px;
+    right: 60px;
+    background-color: var(--black);
+    width: 295px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 15px;
+    background: var(--black);
+    z-index: 10;
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transform: translateX(400px);
+    -webkit-animation: scale-down-tr 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: scale-down-tr 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+#cards #filters-wrapper.show {
+    
+    -webkit-animation: scale-up-tr 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: scale-up-tr 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+#cards #filters-wrapper h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+#cards #filters-wrapper #exit-filters-btn {
+    all: unset;
+    cursor: pointer;
+    
+}
+#cards #filters-wrapper button {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+#cards #filters-wrapper #button-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.custom-checkbox {
+    display: none;
+}
+/* Style the custom label */
+.custom-label {
+    display: inline-block;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 20px;
+    user-select: none;
+}
+/* Add a box for the custom checkbox */
+.custom-label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    outline: var(--white);
+    border: 6px solid --white;
+    border-radius: 50%; /* Optional: Make it rounded */
+    background-image: url(resources/images/checkbox.svg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Add a checkmark for the checked state */
+.custom-checkbox:checked + .custom-label::before {
+    background-color: var(--white); /* Checked background color */
+    border-color: var(--white); /* Checked border color */
+}
+
+.custom-checkbox:checked + .custom-label::after {
+    opacity: 1; /* Show the checkmark */
+}
+
+/* -- Map -- */
 #map-wrapper {
     display: flex;
     justify-content: center;
@@ -212,8 +404,7 @@ body {
     background-color: #CD6364;
 }
 
-
-
+/* -- Markers -- */
 .marker_det {
     position: absolute;
     
@@ -233,7 +424,6 @@ body {
     transform: scale(1.0);
     opacity: 1;
 }
-
 .marker_det .btn-wrapper {
     display: flex;
     flex-direction: row;
@@ -243,3 +433,263 @@ body {
 .marker_det h2 {
     text-align: center;
 }
+
+
+
+@media only screen and (max-width: 400px) {
+
+    .navbar {
+        position: fixed;
+        width: 100vw;
+        right: 0px;
+        top: auto;
+        bottom: 0;
+        
+        padding: 0;
+        flex-direction: row;
+        border-radius: 0;
+        box-shadow: none;
+        -webkit-animation: none;
+                animation: none;
+    }
+    .navbar.scroll {
+        -webkit-animation: none;
+                animation: none;
+    }
+    .navbar ul {  
+        padding-top: 20px;
+        padding-bottom: 20px;              
+        margin: 0;               
+    }
+
+    #main-header #what-to-bring-wrapper {
+        display: none;
+    }
+    
+    /* -- Filter Icon -- */
+    #cards #filter-icon {
+        position: absolute;
+        right: 30px;
+        top: -70px;
+
+    }
+
+    /* -- Filter Menu -- */
+    #cards #filters-wrapper {
+        z-index: 2000;
+        display: none;
+        overflow-y: auto;
+        height: calc(100vh - 50px);
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: var(--black);
+        width: calc(100% - 60px);
+        padding: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        border-radius: 0;
+        background: var(--black);
+        z-index: 10;
+        color: var(--white);
+        font-family: var(--font);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        -webkit-animation: scale-down-tr 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: scale-down-tr 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+    #cards #filters-wrapper.show {
+        display: flex;
+        -webkit-animation: scale-up-tr 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: scale-up-tr 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+    .navbar .open-filter{
+        display: none;
+    }
+    #cards #filters-wrapper #button-wrapper {
+        margin-bottom: 70px;
+    }
+}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -- Animations --
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-12-14 11:43:37
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-up-tr
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-up-tr {
+    0% {
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+        -webkit-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+    }
+    }
+    @keyframes scale-up-tr {
+    0% {
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+        -webkit-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+    }
+}
+  
+@-webkit-keyframes scale-down-tr {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+    }
+    100% {
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
+        -webkit-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+    }
+    }
+    @keyframes scale-down-tr {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+    }
+    100% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+        -webkit-transform-origin: 100% 0%;
+                transform-origin: 100% 0%;
+        }
+    }
+
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes slide-out-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-out-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+  }
+  
