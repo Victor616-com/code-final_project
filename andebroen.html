@@ -16,9 +16,9 @@
     <div class="navbar">
         <ul>
             <a href="index.html"><li class="nav-bar-item">Home</li></a>
-            <a href="#cards"><li class="nav-bar-item">Spots</li></a>
-            <a href="#map-wrapper"><li class="nav-bar-item">Map</li></a>
-            <li class="nav-bar-item">Weather</li>
+            <a href="index.html"><li class="nav-bar-item">Spots</li></a>
+            <a href="index.html"><li class="nav-bar-item">Map</li></a>
+            <a href="#weather"><li class="nav-bar-item">Weather</li></a>
             <li class="nav-bar-item">What to bring</li>
         </ul>
     </div>  
@@ -49,7 +49,12 @@
                 <p>Andebroen is a charming pedestrian and bicycle bridge located in Aarhus, Denmark, spanning the Aarhus River. Its name, which translates to "Duck Bridge," is inspired by the ducks often seen swimming in the river below. </p>
                 <p>The bridge is a key connector between the lively Latin Quarter and the tranquil Aarhus Central Harbor area. It is known for its modern, minimalist design that complements the urban surroundings while offering a peaceful spot to enjoy views of the waterway and the city's vibrant life. </p>
             </div>
-            <div id="andebroen-map"></div>
+            <div class="map-wrapper">
+                <div id="andebroen-map">
+                </div>
+                <button class="red-btn" onclick="window.open('https://www.google.com/maps/place/Andebroen/@56.1403233,10.1419322,17z/data=!3m1!4b1!4m6!3m5!1s0x464c6aade8ab1569:0xcdd323b474afb4ef!8m2!3d56.1403203!4d10.1445071!16s%2Fg%2F11d_bjksl6?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D')">Open in Maps</button>
+            </div>
+            
         </div>
     </div>
 
@@ -83,12 +88,8 @@
         
     </div>
 </body>
-<script>
-    const slideshow = document.querySelector('.slideshow');
-
-    function changeSlideshow() {
-        slideshow.classList.toggle('second');
-    }
-</script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlfT7qosbn2ZLpsrBmwhI7HwXQj23GKNI&callback=initMap"></script>
+<script src="javascript-andebroen.js"></script>
+<script src="map-JS.js"></script>
 <script src="weather.js"></script>
 </html>
