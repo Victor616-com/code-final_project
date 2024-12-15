@@ -1,5 +1,6 @@
 // Function to add current weather data to HTML
 function addCureentWeatherToHTML(currentWeather) {
+    // Variables for weather data
     let currentIcon = currentWeather.weather[0].icon;
     let currentDescription = currentWeather.weather[0].description;
     let currentTemperature = Math.round(currentWeather.main.temp);
@@ -8,15 +9,15 @@ function addCureentWeatherToHTML(currentWeather) {
     let currentWindDirection = currentWeather.wind.deg;
     let currentHumidity = currentWeather.main.humidity;
     
-    let iconCard = document.querySelector('.icon-card');
-    let tempCard = document.querySelector('.temperature-card p2');
-    let precipCard = document.querySelector('.precipitation-card p2');
-    let windSpeedCard = document.querySelector('.wind-card p2');
-    let windArrow = document.querySelector('.wind-card img');
-    let humidCard = document.querySelector('.humidity-card p2');
-    let topIcon = document.querySelector('.weather-icon-top');
-
-
+    // Constants for selecting items in the DOM
+    const iconCard = document.querySelector('.icon-card');
+    const tempCard = document.querySelector('.temperature-card p2');
+    const precipCard = document.querySelector('.precipitation-card p2');
+    const windSpeedCard = document.querySelector('.wind-card p2');
+    const windArrow = document.querySelector('.wind-card img');
+    const humidCard = document.querySelector('.humidity-card p2');
+    
+    // Adding the data to the DOM
     let weatherIcon = document.createElement('div');
     weatherIcon.innerHTML = `<img src="resources/images/${currentIcon}.png" alt="${currentDescription}">`;  // Updated the image URL
     iconCard.appendChild(weatherIcon);
@@ -27,37 +28,37 @@ function addCureentWeatherToHTML(currentWeather) {
     windArrow.style.transform = `rotate(${currentWindDirection}deg)`;
     humidCard.innerHTML = `${currentHumidity}%`;
 
+    // Icon at the top of the site
+    const topIcon = document.querySelector('.weather-icon-top');
     topIcon.innerHTML = `<img src="resources/images/${currentIcon}.png" alt="${currentDescription}">`
-    
-}
+};
 
+
+// Function to add future weather data to HTML
 function addThreeDaysWeatherToHTML(weatherThreeDays) {
     
-
     let futureWeather = document.querySelector('.future-weather');
+    
     weatherThreeDays.forEach(dayForecast => {
         let futureWeatherCard = document.createElement('div');
         let formattedDate = formatDateToDayAndDate(dayForecast.time);
 
         futureWeatherCard.innerHTML = `
-        <p class="date">${formattedDate}</p>
-        <img src="resources/images/${dayForecast.icon}.png" alt="${dayForecast.description}">
-        <p class="temp">${Math.round(dayForecast.temperature)}°C</p>
-        <p class="wind">${dayForecast.wind.speed}km/h</p>
-        `;
+            <p class="date">${formattedDate}</p>
+            <img src="resources/images/${dayForecast.icon}.png" alt="${dayForecast.description}">
+            <p class="temp">${Math.round(dayForecast.temperature)}°C</p>
+            <p class="wind">${dayForecast.wind.speed}km/h</p>
+            `;
         futureWeatherCard.classList.add('future-weather-card');
         futureWeather.appendChild(futureWeatherCard); 
-    })
+    });
+};
 
-    
-
-}
-
-
+// Format the date to Fri 6 format
 function formatDateToDayAndDate(date) {
-    const options = { weekday: 'short', day: 'numeric' }; // Format: short weekday + day
-    return new Intl.DateTimeFormat('en-US', options).format(date); // Example: "Fri 6"
-}
+    const options = { weekday: 'short', day: 'numeric' }; 
+    return new Intl.DateTimeFormat('en-US', options).format(date);
+};
 
 
 // Function to initialize weather data
@@ -73,8 +74,7 @@ const initAppWeather = () => {
         let icon = [];
         let date = [];
         let description = [];
-
-        let currentWeather = data.list[0]; // Accessing the first item
+        let currentWeather = data.list[0];
 
         // Loop through forecast data and process items at 13:00
         data.list.forEach(item => {
@@ -94,6 +94,7 @@ const initAppWeather = () => {
                 date.push(item.dt);
                 description.push(item.weather[0].description);
 
+                // Create a forecast object with the next 5 days 
                 forecast.push({
                     time: dateAndTime,
                     temperature: item.main.temp,
@@ -108,12 +109,14 @@ const initAppWeather = () => {
                 });
             }
         });
+
+        // Only select 3 days
         let weatherThreeDays = [];
         for(let i = 0; i <= 2; i++) {
             weatherThreeDays.push(forecast[i]);
         }
-        console.log(weatherThreeDays);
-        // Call the function to display the current weather on the page
+
+        // Calling the functions to display the current weather on the page
         addCureentWeatherToHTML(currentWeather); 
         addThreeDaysWeatherToHTML(weatherThreeDays)
     })
