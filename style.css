@@ -824,7 +824,7 @@ header .weather-icon-top img {
     .spot-info-wrapper .spot-info .spot-description {
         width: 300px;
     }
-    .spot-info-wrapper #andebroen-map {
+    .spot-info-wrapper #location-map {
         display: flex;
         width: 300px;
         height: 271px;
