@@ -681,7 +681,7 @@ header .weather-icon-top img {
     
 }
 .spot-info-wrapper .spot-info .spot-description {
-
+    display: flex;
     width: 432px;
 }
 .spot-info-wrapper .spot-info .spot-description p {
@@ -693,6 +693,7 @@ header .weather-icon-top img {
     line-height: normal;
 }
 .spot-info-wrapper #andebroen-map {
+    display: flex;
     width: 463px;
     height: 271px;
     background-color: var(--gray);
