@@ -19,12 +19,16 @@
             <a href="#main-header"><li class="nav-bar-item">Home</li></a>
             <a href="#cards"><li class="nav-bar-item">Spots</li></a>
             <a href="#map-wrapper"><li class="nav-bar-item">Map</li></a>
-            <li class="nav-bar-item">Weather</li>
+            <a href="#weather"><li class="nav-bar-item">Weather</li></a>
             <li class="nav-bar-item">What to bring</li>
         </ul>
     </div>
 
-    <header></header>
+    <header>
+        <div class="weather-icon-top">
+
+        </div>
+    </header>
     
     <div id="main-header">
         <div id="image-wrapper" >
@@ -141,7 +145,35 @@
         <div id="map"></div>
     </div>
     
-    <div id="weather"></div>
+    <div class="weather" id="weather">
+        <div class="current-weather">
+            <div class="icon-card" >
+                
+            </div>
+            <div class="temperature-card weather-card">
+                <p1 class="title-weather-card">Temperature</p1>
+                <p2 class="content-weather-card">15°C</p2>
+            </div>
+            <div class="precipitation-card weather-card">
+                <p1 class="title-weather-card">Precipitation</p1>
+                <p2 class="content-weather-card">0.41 mm</p2>
+            </div>
+            <div class="wind-card weather-card">
+                <p1 class="title-weather-card">Wind</p1>
+                <p2 class="content-weather-card">10km/h</p2>
+                <img src="resources/images/wind-arrow.svg" alt="">
+            </div>
+            <div class="humidity-card weather-card">
+                <p1 class="title-weather-card">Humidity</p1>
+                <p2 class="content-weather-card">46%</p2>
+            </div>
+           
+        </div>
+        <div class="future-weather">
+            
+        </div>
+        
+    </div>
 
 </body>
 
@@ -149,4 +181,5 @@
 <script src="filtering.js"></script>
 <script src="javascript.js"></script>
 <script src="map-JS.js"></script>
+<script src="weather.js"></script>
 </html>

@@ -21,7 +21,9 @@ body {
     padding: 0;
     background: var(--bg);
 }
-
+a {
+    all: unset;
+}
 
 /* -- Buttons -- */
 .black-btn {
@@ -144,14 +146,24 @@ body {
     cursor: pointer;
 }
 
+header .weather-icon-top {
+    
+    margin-left: 30px;
+    margin-top: 10px;
+}
+header .weather-icon-top img {
+    width: 36px;
+    height: auto;
+    filter: grayscale(100%) brightness(0%);
 
+}
 
 
 
 /* -- Main Header -- */
 #main-header {
     position: relative;
-    margin-top: 60px;
+    margin-top: 10px;
 }
 
 #main-header #image-wrapper {
@@ -438,6 +450,151 @@ body {
     text-align: center;
 }
 
+
+/* -- Weather -- */
+
+.weather {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.weather .current-weather {
+    display: flex;
+    width: fit-content;
+    position: relative;
+    margin-right: 200px;
+}
+/*
+.weather .current-weather .icon-card {
+    left: 250px;
+    position: absolute;
+}
+*/
+.weather .current-weather .temperature-card {
+   position: absolute;
+   left: -90px;
+   top: -30px;
+   z-index: -1;
+}
+
+.weather .current-weather .precipitation-card {
+    position: absolute;
+    right: -80px;
+    top: -50px;
+    
+}
+
+.weather .current-weather .wind-card {
+    position: absolute;
+    right: -130px;
+    top: 100px;
+}
+.weather .current-weather .humidity-card {
+    position: absolute;
+    left: -80px;
+    top: 130px;
+    z-index: -1;
+}
+.weather .current-weather .weather-card {
+    display: flex;
+    height: fit-content;
+    padding: 10px; /* Reduced padding to avoid excessive space around the icon */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 6px;
+    border-radius: 15px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    width: fit-content;/* Ensures the card is sized based on the image */
+    margin: 0 auto; /* Centers the icon card */
+    
+}
+.weather .current-weather .weather-card .title-weather-card {
+    color: var(--gray-light);
+    text-align: center;
+    font-family: var(--font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.weather .current-weather .weather-card .content-weather-card {
+    color: var(--Gray, #585656);
+    font-family: var(--font);
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.weather .current-weather .icon-card img {
+    width: 150px;
+    height: auto;
+}
+.weather .current-weather .icon-card {
+    display: flex;
+    padding: 10px; /* Reduced padding to avoid excessive space around the icon */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 6px;
+    border-radius: 15px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    width: fit-content;/* Ensures the card is sized based on the image */
+    margin: 0 auto; /* Centers the icon card */
+    position: relative;
+    height: fit-content;
+}
+
+.weather .future-weather {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+
+}
+.weather .future-weather .future-weather-card {
+    display: flex;
+    height: 220px;
+    width: fit-content;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    width: 160px;
+}
+.weather .future-weather .future-weather-card p {
+    padding: 0;
+    margin: 0;
+}
+.weather .future-weather .future-weather-card .date {
+    color: var(--gray-light);
+    text-align: center;
+    font-family: var(--font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.weather .future-weather .future-weather-card .temp,.wind {
+    color: var(--gray);
+    text-align: center;
+    font-family: var(--font);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
 
 
 @media only screen and (max-width: 400px) {
