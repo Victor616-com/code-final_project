@@ -541,6 +541,7 @@ header .weather-icon-top img {
     height: fit-content;
 }
 
+
 .weather .future-weather {
     position: relative;
     display: flex;
@@ -587,6 +588,74 @@ header .weather-icon-top img {
     line-height: normal;
 }
 
+
+
+
+/* -- Style for other HTMLS -- */
+
+.andebroen {
+    background-image: url(resources/images/Andebroen1.PNG);
+}
+.andebroen.second {
+    background-image: url(resources/images/Andebroen2.PNG);
+}
+
+
+
+.slideshow-wrapper {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.slideshow-wrapper .slideshow {
+    width: 920px;
+    height: 590px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+    position: relative;
+
+}
+.slideshow-wrapper .slideshow button  {
+    all: unset;
+    margin: 30px;
+    scale: 0.9;
+    cursor: pointer;
+}
+.slideshow-wrapper .slideshow .spot-name {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: var(--black);
+    box-shadow: var(--shadow);
+    padding: 10px 20px 10px 20px;
+    position: absolute;
+    bottom: -30px;
+    right: -60px;
+
+}
+.slideshow-wrapper .slideshow .spot-name h1 {
+    color: var(--white);
+    text-align: center;
+    font-family: var(--font);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
 
 @media only screen and (max-width: 400px) {
     .no-scroll {

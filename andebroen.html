@@ -23,11 +23,62 @@
         </ul>
     </div>  
 
-    <div class="slideshow">
-        <img src="resources/images/Andebroen1.PNG" alt="">
-        <img src="resources/images/Andebroen2.PNG" alt="">
+    <header>
+        <div class="weather-icon-top">
+            
+        </div>
+    </header>
+
+    <div class="slideshow-wrapper">
+        <div class="slideshow andebroen">
+            <button onclick="changeSlideshow()">
+                <img src="resources/images/left-arrow.svg" alt="left">
+            </button>
+            <button onclick="changeSlideshow()">
+                <img src="resources/images/right-arrow.svg" alt="right">
+            </button>
+            <div class="spot-name">
+                <h1>Andebroen</h1>
+            </div>
+        </div>
     </div>
 
-
+    <div class="weather" id="weather">
+        <div class="current-weather">
+            <div class="icon-card" >
+                
+            </div>
+            <div class="temperature-card weather-card">
+                <p1 class="title-weather-card">Temperature</p1>
+                <p2 class="content-weather-card">15°C</p2>
+            </div>
+            <div class="precipitation-card weather-card">
+                <p1 class="title-weather-card">Precipitation</p1>
+                <p2 class="content-weather-card">0.41 mm</p2>
+            </div>
+            <div class="wind-card weather-card">
+                <p1 class="title-weather-card">Wind</p1>
+                <p2 class="content-weather-card">10km/h</p2>
+                <img src="resources/images/wind-arrow.svg" alt="">
+            </div>
+            <div class="humidity-card weather-card">
+                <p1 class="title-weather-card">Humidity</p1>
+                <p2 class="content-weather-card">46%</p2>
+            </div>
+           
+        </div>
+        <div class="future-weather">
+            
+        </div>
+        
+    </div>
 </body>
+<script>
+    const slideshow = document.querySelector('.slideshow');
+
+    function changeSlideshow() {
+        slideshow.classList.toggle('second');
+    }
+</script>
+<script src="weather.js"></script>
 </html>
