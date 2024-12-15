@@ -150,7 +150,7 @@ a {
 header .weather-icon-top {
     
     margin-left: 30px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 header .weather-icon-top img {
     width: 36px;
@@ -601,8 +601,18 @@ header .weather-icon-top img {
 .andebroen.second {
     background-image: url(resources/images/Andebroen2.PNG);
 }
-
-
+.klokkerparken {
+    background-image: url(resources/images/Klokkerparken1.PNG);
+}
+.klokkerparken.second {
+    background-image: url(resources/images/Klokkerparken2.PNG);
+}
+.lighthouse {
+    background-image: url(resources/images/Det-lille-fyrtarn1.PNG);
+}
+.lighthouse.second {
+    background-image: url(resources/images/Det-lille-fyrtarn2.PNG);
+}
 
 .slideshow-wrapper {
     margin-top: 20px;
@@ -624,7 +634,6 @@ header .weather-icon-top img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
     position: relative;
 
 }
@@ -696,7 +705,7 @@ header .weather-icon-top img {
     line-height: normal;
     margin: 0;
 }
-.spot-info-wrapper #andebroen-map {
+.spot-info-wrapper #location-map {
     display: flex;
     width: 463px;
     height: 271px;

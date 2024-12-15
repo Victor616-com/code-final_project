@@ -42,7 +42,8 @@
         "volleyball": false,
         "toilets": false,
         "firePit": true,
-        "car": false
+        "car": false,
+        "link": "klokkerparken.html"
     },
     {
         "id": 3,
@@ -63,7 +64,8 @@
         "volleyball": false,
         "toilets": false,
         "firePit": false,
-        "car": true
+        "car": true,
+        "link": "thesmalllighthouse.html"
     },
     {
         "id": 4,

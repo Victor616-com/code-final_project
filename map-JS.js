@@ -318,7 +318,7 @@ const initMap = (filteredSpots) =>  {
                 </div
             </div>
             <div class="btn-wrapper">
-                <button class="black-btn" onclick="openEventsLink()">See more</button> 
+                <button class="black-btn" onclick="window.location.href = '${markerData.link}'">See more</button> 
             </div>
             
         `;
@@ -369,13 +369,12 @@ const initMap = (filteredSpots) =>  {
 }
 
 
-const mapAndebroen = (andebroen) => {
-    let markers = andebroen;
+const mapLocation = (locationData) => {
+    let markers = locationData;
     // Positioning the map on load based on the screen size 
     let zoom = 12;
-    let positioOnStart = [56.144334, 10.153145];
+    let positioOnStart = [markers.lat, markers.lng];
     let zoomControls = false;
-    console.log(andebroen);
     const centerMap = { lat: positioOnStart[0], lng: positioOnStart[1] }
     const mapOptions = {
         center: centerMap,
@@ -639,7 +638,7 @@ const mapAndebroen = (andebroen) => {
         ]
     }
     // Creates a new map object from Google API
-    const map = new google.maps.Map(document.getElementById('andebroen-map'), mapOptions);
+    const map = new google.maps.Map(document.getElementById('location-map'), mapOptions);
     
     const marker = new google.maps.Marker({
         position: { lat: markers.lat, lng: markers.lng },

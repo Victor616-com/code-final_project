@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Picnic Spots</title>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <a href="index.html"><li class="nav-bar-item">Home</li></a>
+            <a href="index.html#cards"><li class="nav-bar-item">Spots</li></a>
+            <a href="index.html#map"><li class="nav-bar-item">Map</li></a>
+            <a href="#weather"><li class="nav-bar-item">Weather</li></a>
+            <li class="nav-bar-item">What to bring</li>
+        </ul>
+    </div>  
+
+    <header>
+        <a href="#weather" style="cursor: pointer;"><div class="weather-icon-top"></div></a>
+    </header>
+
+    <div class="slideshow-wrapper">
+        <div class="slideshow lighthouse">
+            <button onclick="changeSlideshow()">
+                <img src="resources/images/left-arrow.svg" alt="left">
+            </button>
+            <button onclick="changeSlideshow()">
+                <img src="resources/images/right-arrow.svg" alt="right">
+            </button>
+            <div class="spot-name">
+                <h1>Det lille fyrtårn</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="spot-info-wrapper">
+        <div class="spot-info">
+            <div class="spot-description">
+                <p>Det Lille Fyrtårn, or The Little Lighthouse, is a charming landmark located in Marselisborg Harbor, Aarhus, Denmark. Small and picturesque, it adds a unique touch to the bustling marina, blending maritime heritage with modern harbor life.</p>
+                <p>Though not a functional beacon for navigation, its quaint design and coastal ambiance make it a beloved spot for locals and visitors alike, offering a perfect backdrop for a peaceful stroll or a moment of reflection by the sea.</p>
+            </div>
+            <div class="map-wrapper">
+                <div id="location-map">
+                </div>
+                <button class="red-btn" onclick="window.open('https://www.google.com/maps/place/Klokkerparken/@56.1633632,10.1533926,17z/data=!3m1!4b1!4m6!3m5!1s0x464c15dbaf3a0ed7:0xc906f36574505278!8m2!3d56.1633602!4d10.1559675!16s%2Fg%2F11kxgkkhvr?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D')">Open in Maps</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="weather" id="weather">
+        <div class="current-weather">
+            <div class="icon-card" >
+                
+            </div>
+            <div class="temperature-card weather-card">
+                <p1 class="title-weather-card">Temperature</p1>
+                <p2 class="content-weather-card">15°C</p2>
+            </div>
+            <div class="precipitation-card weather-card">
+                <p1 class="title-weather-card">Precipitation</p1>
+                <p2 class="content-weather-card">0.41 mm</p2>
+            </div>
+            <div class="wind-card weather-card">
+                <p1 class="title-weather-card">Wind</p1>
+                <p2 class="content-weather-card">10km/h</p2>
+                <img src="resources/images/wind-arrow.svg" alt="">
+            </div>
+            <div class="humidity-card weather-card">
+                <p1 class="title-weather-card">Humidity</p1>
+                <p2 class="content-weather-card">46%</p2>
+            </div>
+           
+        </div>
+        <div class="future-weather">
+            
+        </div>
+        
+    </div>
+</body>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlfT7qosbn2ZLpsrBmwhI7HwXQj23GKNI&callback=initMap"></script>
+<script src="javascript-location.js"></script>
+<script src="map-JS.js"></script>
+<script src="weather.js"></script>
+</html>
