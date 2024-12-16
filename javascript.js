@@ -107,7 +107,7 @@ const initApp = () => {
 }
 initApp()
 
-
+// Function for hiding the navbar on scroll down
 const navBar = document.querySelector('.navbar');
 let lastScrollTop = 0;
 window.addEventListener("scroll", function() {
@@ -123,6 +123,7 @@ window.addEventListener("scroll", function() {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
 });
 
+// Function for having a small offset when scroling with the navbar
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();

@@ -86,7 +86,8 @@
         "volleyball": false,
         "toilets": false,
         "firePit": false,
-        "car": false
+        "car": false,
+        "link": "404.html"
     },
     {
         "id": 5,
@@ -107,7 +108,8 @@
         "volleyball": false,
         "toilets": true,
         "firePit": false,
-        "car": false
+        "car": false,
+        "link": "404.html"
 
     },
     {
@@ -129,7 +131,8 @@
         "volleyball": false,
         "toilets": false,
         "firePit": true,
-        "car": false
+        "car": false,
+        "link": "404.html"
     },
     {
         "id": 7,
@@ -150,7 +153,8 @@
         "volleyball": false,
         "toilets": false,
         "firePit": false,
-        "car": false
+        "car": false,
+        "link": "404.html"
     },
     {
         "id": 8,
@@ -171,7 +175,8 @@
         "volleyball": false,
         "toilets": false,
         "firePit": false,
-        "car": false
+        "car": false,
+        "link": "404.html"
     },
     {
         "id": 9,
@@ -192,7 +197,8 @@
         "volleyball": false,
         "toilets": false,
         "firePit": false,
-        "car": false
+        "car": false,
+        "link": "404.html"
     }
     
 ]

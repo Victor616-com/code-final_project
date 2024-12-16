@@ -369,11 +369,13 @@ const initMap = (filteredSpots) =>  {
 }
 
 
+
+// Function for the location pages
 const mapLocation = (locationData) => {
     let markers = locationData;
     // Positioning the map on load based on the screen size 
     let zoom = 12;
-    let positioOnStart = [markers.lat, markers.lng];
+    let positioOnStart = [markers.lat, markers.lng]; // Map position so that the marker is in the middle
     let zoomControls = false;
     const centerMap = { lat: positioOnStart[0], lng: positioOnStart[1] }
     const mapOptions = {
@@ -381,6 +383,7 @@ const mapLocation = (locationData) => {
         zoom: zoom,
         disableDefaultUI: true, // Disable the google maps controls 
         zoomControl: zoomControls, // Manages the zoom controls
+        
         // Styling for the map from SnazzyMaps
         styles: [
             {
@@ -640,6 +643,7 @@ const mapLocation = (locationData) => {
     // Creates a new map object from Google API
     const map = new google.maps.Map(document.getElementById('location-map'), mapOptions);
     
+    // Creates a single marker on the map
     const marker = new google.maps.Marker({
         position: { lat: markers.lat, lng: markers.lng },
         map: map,

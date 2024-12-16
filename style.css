@@ -228,7 +228,7 @@ header .weather-icon-top img {
     font-weight: 700;
 }
 #cards-wrapper {
-    max-width: calc(100% - 40px);
+    max-width: calc(100% - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -303,7 +303,6 @@ header .weather-icon-top img {
     position: absolute;
     right: 60px;
     top: -60px;
-
 }
 
 /* -- Filter Menu -- */
@@ -413,6 +412,7 @@ header .weather-icon-top img {
     border-radius: 15px;
     height: 680px;
     background-color: #CD6364;
+    box-shadow: var(--shadow)   ;
 }
 
 /* -- Markers -- */
@@ -724,6 +724,57 @@ header .weather-icon-top img {
     z-index: 200;
 }
 
+.see-more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+
+
+
+
+/* -- 404 page -- */
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: var(--black);
+}
+.wrapper img {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.wrapper h1 {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 200px;
+}
+.wrapper h2 {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 40px;
+}
+.wrapper button {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
 
 
 
@@ -841,6 +892,16 @@ header .weather-icon-top img {
     
     .slideshow-wrapper .slideshow .spot-name h1 {
         font-size: 25px;
+    }
+
+
+
+    .wrapper img {
+        width: 200px;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 }    
 
