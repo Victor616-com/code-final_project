@@ -48,14 +48,14 @@ const initApp = () => {
         let locationData = data.find(location => location.link === currentFile); // Finds the location from the HTML file title
 
         if (!locationData) {
-            alert('Something went wrong: No matching location data found');
+            alert('Oh no! Something went wrong: No matching location data found :( Try reloading the page.');
         } else {
             mapLocation(locationData); // Sends the location data to the map-JS file
         }
     })
     .catch(error => {
         console.error('Error fetching JSON:', error);
-        alert('There was an error fetching the location data');
+        alert('Oh no! There was an error fetching the location data :( Try reloading the page.');
     });
 }
 initApp()

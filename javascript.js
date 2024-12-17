@@ -128,8 +128,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetElement = document.querySelector(this.getAttribute('href'));
-        
-        const targetPosition =  targetElement.offsetTop - 80;
+        let targetPosition;
+
+
+        if (targetElement.id === 'map-wrapper') {
+            targetPosition = targetElement.offsetTop - 25; // Adjusted offset for map
+            
+        } else {
+            targetPosition = targetElement.offsetTop - 80; // Default offset
+        }
 
         window.scrollTo({
             top: targetPosition,
