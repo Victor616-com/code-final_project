@@ -228,7 +228,7 @@ header .weather-icon-top img {
     font-weight: 700;
 }
 #cards-wrapper {
-    max-width: calc(100% - 60px);
+    max-width: calc(100% - 70px);
     display: flex;
     justify-content: center;
     align-items: center;
