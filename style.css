@@ -383,7 +383,7 @@ header .weather-icon-top img {
     width: 20px;
     height: 20px;
     outline: var(--white);
-    border: 6px solid --white;
+    border: 6px solid var(--white);
     border-radius: 50%; /* Optional: Make it rounded */
     background-image: url(resources/images/checkbox.svg);
     background-size: cover;
