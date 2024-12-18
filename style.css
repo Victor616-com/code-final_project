@@ -465,9 +465,13 @@ header .weather-icon-top img {
 }
 .weather .current-weather .temperature-card {
    position: absolute;
+   height: fit-content;
    left: -90px;
    top: -30px;
    z-index: -1;
+}
+.weather .current-weather p {
+    margin: 0;
 }
 .weather .current-weather .precipitation-card {
     position: absolute;
