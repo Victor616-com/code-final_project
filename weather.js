@@ -11,7 +11,7 @@ function addCureentWeatherToHTML(currentWeather) {
     
     // Constants for selecting items in the DOM
     const iconCard = document.querySelector('.icon-card');
-    const tempCard = document.querySelector('.temperature-card .title-weather-card');
+    const tempCard = document.querySelector('.temperature-card .content-weather-card');
     const precipCard = document.querySelector('.precipitation-card .content-weather-card');
     const windSpeedCard = document.querySelector('.wind-card .content-weather-card');
     const windArrow = document.querySelector('.wind-card img');
