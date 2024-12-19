@@ -383,7 +383,7 @@ const mapLocation = (locationData) => {
         zoom: zoom,
         disableDefaultUI: true, // Disable the google maps controls 
         zoomControl: zoomControls, // Manages the zoom controls
-        
+
         // Styling for the map from SnazzyMaps
         styles: [
             {

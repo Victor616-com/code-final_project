@@ -598,22 +598,22 @@ header .weather-icon-top img {
 /* -- Style for other HTMLS -- */
 
 .andebroen {
-    background-image: url(resources/images/Andebroen1.PNG);
+    background-image: url(resources/images/Andebroen1.jpg);
 }
 .andebroen.second {
-    background-image: url(resources/images/Andebroen2.PNG);
+    background-image: url(resources/images/Andebroen2.jpg);
 }
 .klokkerparken {
-    background-image: url(resources/images/Klokkerparken1.PNG);
+    background-image: url(resources/images/Klokkerparken1.jpg);
 }
 .klokkerparken.second {
-    background-image: url(resources/images/Klokkerparken2.PNG);
+    background-image: url(resources/images/Klokkerparken2.jpg);
 }
 .lighthouse {
-    background-image: url(resources/images/Det-lille-fyrtarn1.PNG);
+    background-image: url(resources/images/Det-lille-fyrtarn1.jpg);
 }
 .lighthouse.second {
-    background-image: url(resources/images/Det-lille-fyrtarn2.PNG);
+    background-image: url(resources/images/Det-lille-fyrtarn2.jpg);
 }
 
 .slideshow-wrapper {

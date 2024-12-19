@@ -105,7 +105,8 @@ const initApp = () => {
         submitForm(); // Sends the list to filtering.js 
     })
 }
-initApp()
+initApp();
+
 
 // Function for hiding the navbar on scroll down
 const navBar = document.querySelector('.navbar');

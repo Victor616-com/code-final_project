@@ -2,7 +2,7 @@
     
     {
         "id": 1,
-        "image": "Andebroen1.PNG",
+        "image": "Andebroen1.jpg",
         "title": "Andebroen",
         "description": "A nice spot to relax by the lake and watch the ducks",
         "popularity": "high",
@@ -25,7 +25,7 @@
     },
     {
         "id": 2,
-        "image": "Klokkerparken1.PNG",
+        "image": "Klokkerparken1.jpg",
         "title": "Klokkerparken",
         "description": " An open grass park with free-standing trees towards the edge",
         "popularity": "medium",
@@ -47,7 +47,7 @@
     },
     {
         "id": 3,
-        "image": "Det-lille-fyrtarn1.PNG",
+        "image": "Det-lille-fyrtarn1.jpg",
         "title": "Det lille fyrtårn",
         "description": "A nice spot to relax by the sea and watch boats going by",
         "popularity": "medium",
@@ -69,7 +69,7 @@
     },
     {
         "id": 4,
-        "image": "University-Park.PNG",
+        "image": "University-Park.jpg",
         "title": "University Park",
         "description": "Amazing place in summers to have chilled beer and fresh air together by the small lake beside.",
         "popularity": "medium",
@@ -91,7 +91,7 @@
     },
     {
         "id": 5,
-        "image": "Botanical-Garden.png",
+        "image": "Botanical-Garden.jpg",
         "title": "Botanical Garden",
         "description": " The Botanical Garden in Aarhus is a tranquil park perfect for relaxation and exploration.",
         "popularity": "high",
@@ -180,7 +180,7 @@
     },
     {
         "id": 9,
-        "image": "Vårkjærparken.png",
+        "image": "park.png",
         "title": "Vårkjærparken",
         "description": "A nice spot to relax",
         "popularity": "low",
